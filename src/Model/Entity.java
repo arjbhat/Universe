@@ -5,6 +5,7 @@ import java.util.Objects;
 
 import Model.Dynamics.Position;
 import Model.Dynamics.Velocity;
+import Model.Utils.PhysicsUtils;
 import View.WorldPanel;
 
 public class Entity {
@@ -41,8 +42,7 @@ public class Entity {
     double rY = e.position.getY() - this.position.getY();
     double rZ = e.position.getZ() - this.position.getZ();
 
-    double absR = Math.sqrt(Math.pow(rX, 2) + Math.pow(rY, 2) + Math.pow(rZ, 2));
-
+    double absR = PhysicsUtils.distance(this.position, e.position);
     double absAcc = GM / Math.pow(absR, 2);
 
     double aX = absAcc * (rX / absR);
@@ -71,10 +71,7 @@ public class Entity {
   }
 
   public double distance(Entity e) {
-    double rX = e.position.getX() - this.position.getX();
-    double rY = e.position.getY() - this.position.getY();
-    double rZ = e.position.getZ() - this.position.getZ();
-    return Math.sqrt(Math.pow(rX, 2) + Math.pow(rY, 2) + Math.pow(rZ, 2));
+    return PhysicsUtils.distance(this.position, e.position);
   }
 
   public void changePosition() {
