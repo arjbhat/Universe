@@ -121,7 +121,7 @@ public class WorldPanel extends JPanel {
 
     ArrayList<Entity> entities = w.getEntities();
 
-    if(entities.size() >= Z_SORT) {
+    if (entities.size() >= Z_SORT) {
       entities.sort(Comparator.comparingDouble(entity -> entity.getPosition().getZ()));
     }
 

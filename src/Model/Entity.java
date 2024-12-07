@@ -58,7 +58,8 @@ public class Entity {
 
   public Entity collide(Entity e) {
     double cMass = this.mass + e.getMass();
-    double radiusPX = Math.cbrt(cMass * 3 / (4 * Math.PI * Math.max(this.density, e.getDensity()))) / WorldPanel.PX_PER_KM;
+    double radiusPX = Math.cbrt(cMass * 3 / (4 * Math.PI * Math.max(this.density, e.getDensity())))
+        / WorldPanel.PX_PER_KM;
     double vX = (this.mass * this.velocity.getVX() + e.getMass() * e.velocity.getVX()) / cMass;
     double vY = (this.mass * this.velocity.getVY() + e.getMass() * e.velocity.getVY()) / cMass;
     double vZ = (this.mass * this.velocity.getVZ() + e.getMass() * e.velocity.getVZ()) / cMass;
@@ -85,7 +86,7 @@ public class Entity {
   }
 
   public double getRadius() {
-      return radius;
+    return radius;
   }
 
   public double getDensity() {

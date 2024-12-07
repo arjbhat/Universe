@@ -1,15 +1,10 @@
 package View;
 
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.Objects;
 
 import javax.swing.*;
 
-import java.awt.event.MouseWheelEvent;
-import java.awt.event.MouseWheelListener;
-
-import Model.Entity;
 import Model.World;
 
 public class WorldFrame extends JFrame {
