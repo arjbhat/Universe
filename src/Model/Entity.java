@@ -66,7 +66,7 @@ public class Entity {
     double x = (this.mass * this.position.getX() + e.getMass() * e.position.getX()) / cMass;
     double y = (this.mass * this.position.getY() + e.getMass() * e.position.getY()) / cMass;
     double z = (this.mass * this.position.getZ() + e.getMass() * e.position.getZ()) / cMass;
-    Color c = this.mass > e.getMass() ? e.getColor() : this.getColor();
+    Color c = this.mass > e.getMass() ? this.getColor() : e.getColor();
     return new Entity(cMass, radiusPX, new Position(x, y, z), new Velocity(vX, vY, vZ), c);
   }
 
